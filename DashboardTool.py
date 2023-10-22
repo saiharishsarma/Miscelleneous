@@ -1,6 +1,7 @@
 # Streamlit Dashboarding
 import streamlit as st
 import pandas as pd
+import numpy as np
 st.title("Customer Behaviour Analysis and Suggestion Tool")
 
 # Creating Interface to upload CSV dataset file to get analysis and suggestions.
