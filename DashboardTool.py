@@ -42,5 +42,6 @@ if uploaded_file:
 
 
     # Adding Suggestions to the Streamlit Dashboard
+    st.subheader("Suggestions")
     for i in Suggestions:
         st.markdown(f"***{i}**")
