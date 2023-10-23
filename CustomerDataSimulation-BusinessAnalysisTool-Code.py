@@ -68,17 +68,17 @@ if uploaded_file:
     # Basic EDA
     
     st.subheader("Basic Exploratory Data Analysis of the Dataset:", divider= "rainbow")
-    st.write(f"Size of the Dataset: {df.shape}")
+    st.write(f"Size of the Dataset: {data.shape}")
     st.write("*First 5 rows of the dataset:*")
-    st.write(df.head())
+    st.write(data.head())
     st.write("*Lst 5 rows of the dataset:*")
-    st.write(df.tail())
+    st.write(data.tail())
     st.write("*Statistical Summary of the dataset:*")
-    st.write(df.describe())
+    st.write(data.describe())
     st.write("*No of Unique entries in each column:*")
-    st.write(df.nunique())
+    st.write(data.nunique())
     st.write("*Check for missing values:*")
-    st.write(df.isnull().sum())
+    st.write(data.isnull().sum())
 
 
 
