@@ -85,23 +85,25 @@ if uploaded_file:
   
     # Extracting KPIs
 
-    Avg_Spent_Per_Customer = round(data['TotalSpend'].mean(), 2)
+    AVG_Spent_Per_Customer = round(data['TotalSpend'].mean(), 2)
+    MIN_Spent_Per_Customer = round(data['TotalSpend'].min(), 2)
 
     Popular_Product_Category = data['ProductCategory'].mode()[0]
 
-    Monthly_Revenue_Growth= round(data.groupby(data['VisitDate'].str[0:7])['TotalSpend'].sum(),2)
+    Monthly_AVG_Revenue_Growth= round(data.groupby(data['VisitDate'].str[0:7])['TotalSpend'].sum().mean(),2)
+    Monthly_MIN_Revenue_Growth= round(data.groupby(data['VisitDate'].str[0:7])['TotalSpend'].sum().min(),2)
 
 
     # Creating Suggestions to be appeared based on hypothetically designed threshold values
 
     Suggestions = []
-    if Avg_Spent_Per_Customer < 300:
+    if AVG_Spent_Per_Customer < MIN_Spent_Per_Customer:
         Suggestions.append("Target Low-Spending Customers by personalized recommendations to increase their spend")
 
     if Popular_Product_Category:
         Suggestions.append(f"Launch More promotions for {Popular_Product_Category} category to boost the sales")
 
-    if Monthly_Revenue_Growth < 40000:
+    if Monthly_AVG_Revenue_Growth < Monthly_MIN_Revenue_Growth:
         Suggestions.append("Attract More Customers by offering Discounts")
 
 
