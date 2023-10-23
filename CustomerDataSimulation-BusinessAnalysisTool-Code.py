@@ -110,11 +110,11 @@ if uploaded_file:
     # Adding KPIs Information to the Streamlit dashboard
     st.subheader("**Key Performance Indicators (KPIs):**", divider='rainbow')
 
-    st.metric("**1. Average Money Spent Per Customer(Threshold: 300 USD):**", AVG_Spent_Per_Customer)
+    st.metric("**1. Average Money Spent Per Customer(in USD):**", AVG_Spent_Per_Customer)
 
     st.metric("**2. Most Popular Product Category:** ", Popular_Product_Category)
 
-    st.metric("**3. Monthly Revenue Growth(Threshold: 40,000 USD):** ", Monthly_AVG_Revenue_Growth)
+    st.metric("**3. Monthly Revenue Growth(in USD):** ", Monthly_AVG_Revenue_Growth)
 
 
     # Adding Suggestions to the Streamlit Dashboard
