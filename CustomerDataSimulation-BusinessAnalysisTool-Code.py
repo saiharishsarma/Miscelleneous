@@ -1,4 +1,3 @@
-
 # Importing Necessary Libraries
 import streamlit as st
 import pandas as pd
@@ -38,30 +37,26 @@ df= pd.DataFrame(data,  columns= ['Customer_ID','Date_Visited', 'Money_Spent', '
 
 
 # Displaying Dataset on Streamlit Interface
-st.dataframe(df)
 if nums ==0:
-    st.warning('Please enter a valid input', icon="⚠️")
+    st.warning('Please enter a valid input')
 else:
     st.success(":wave: Great! Dataset is generated. :wave:")
-
-# Saving the dataset to a CSV file in the system  
-title= st.text_input(f"**Enter a Name to Save CSV file(Ex: samplefile) :point_down::point_down:**")
-if len(title)==0:
-    st.warning("title is empty!")
-    
-else:
-    df.to_csv(f"C:/Users/Public/Downloads/{title}.csv", index= False)
-    st.success(f":wave: File '*{title}*' Saved Sucessfully!!, Kindly Check in Public Downloads Folder :wave:")
-    st.write("*File Location: C:/Users/Public/Downloads")
+    st.dataframe(df)
 
 
+    def convert_df(df):
+        return df.to_csv().encode('utf-8')
+    csv = convert_df(df)
 
+
+    st.download_button(
+        label="Download dataset as CSV",
+        data=csv,
+        file_name='samplename.csv',
+        mime='csv')
 
 
 # Streamlit Dashboarding
-
-
-
 
 st.title("B. Customer Behaviour Analysis and Suggestion Tool")
 
@@ -127,3 +122,11 @@ if uploaded_file:
     
     st.success(":wave: Thanks for using! Have a nice day. :wave:")
 
+
+
+    
+    
+
+    
+
+    
