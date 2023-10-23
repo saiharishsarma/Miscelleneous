@@ -24,16 +24,16 @@ categories = ['Electronics', 'Clothing', 'Food', 'Entertainment', 'Home and Gard
 # Using Loop for creation of sample data simuation
 data=[]
 for i in range(int(nums)):
-    Customer_ID= i+1
-    Date_Visited= (dt.date(2023,1,1)+ timedelta(days= random.randint(1,365))).strftime('%Y-%m-%d')
-    Money_Spent = round(random.uniform(100,1000),0)
-    Product_Category = random.choice(categories)
-    data.append([Customer_ID, Date_Visited, Money_Spent, Product_Category])
+    CustomerID= i+1
+    VisitDate= (dt.date(2023,1,1)+ timedelta(days= random.randint(1,365))).strftime('%Y-%m-%d')
+    TotalSpend = round(random.uniform(100,1000),0)
+    ProductCategory = random.choice(categories)
+    data.append([CustomerID, VisitDate, TotalSpend, ProductCategory])
 
 
 
 # Creating Dataframe of the created sample dataset
-df= pd.DataFrame(data,  columns= ['Customer_ID','Date_Visited', 'Money_Spent', 'Product_Category'])
+df= pd.DataFrame(data,  columns= ['CustomerID','VisitDate', 'TotalSpend', 'ProductCategory'])
 
 
 # Displaying Dataset on Streamlit Interface
