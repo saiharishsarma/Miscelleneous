@@ -84,17 +84,20 @@ if uploaded_file:
 
   
     # Extracting KPIs
+    if data.shape[1] ==4:
 
-    AVG_Spent_Per_Customer = round(data['TotalSpend'].mean(), 2)
-    MIN_Spent_Per_Customer = round(data['TotalSpend'].min(), 2)
+        AVG_Spent_Per_Customer = round(data['TotalSpend'].mean(), 2)
+        MIN_Spent_Per_Customer = round(data['TotalSpend'].min(), 2)
 
-    Popular_Product_Category = data['ProductCategory'].mode()[0]
+        Popular_Product_Category = data['ProductCategory'].mode()[0]
 
-    Monthly_AVG_Revenue_Growth= round(data.groupby(data['VisitDate'].str[0:7])['TotalSpend'].sum().mean(),2)
-    Monthly_MIN_Revenue_Growth= round(data.groupby(data['VisitDate'].str[0:7])['TotalSpend'].sum().min(),2)
+        Monthly_AVG_Revenue_Growth= round(data.groupby(data['VisitDate'].str[0:7])['TotalSpend'].sum().mean(),2)
+        Monthly_MIN_Revenue_Growth= round(data.groupby(data['VisitDate'].str[0:7])['TotalSpend'].sum().min(),2)
+    else:
+        st.warning("This dataset is not useful in this analysis. Kindly upload the correct file!")
 
 
-    # Creating Suggestions to be appeared based on hypothetically designed threshold values
+    # Creating Suggestions to be appeared.
 
     Suggestions = []
     if AVG_Spent_Per_Customer < MIN_Spent_Per_Customer:
