@@ -84,7 +84,7 @@ if uploaded_file:
 
   
     # Extracting KPIs
-    if data.shape[1] ==4:
+    if data.shape[1] ==4 and data.columns == df.columns:
 
         AVG_Spent_Per_Customer = round(data['TotalSpend'].mean(), 2)
         MIN_Spent_Per_Customer = round(data['TotalSpend'].min(), 2)
