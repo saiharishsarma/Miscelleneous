@@ -26,7 +26,7 @@ data=[]
 for i in range(int(nums)):
     Customer_ID= i+1
     Date_Visited= (dt.date(2023,1,1)+ timedelta(days= random.randint(1,365))).strftime('%Y-%m-%d')
-    Money_Spent = round(random.uniform(30,1000),0)
+    Money_Spent = round(random.uniform(100,1000),0)
     Product_Category = random.choice(categories)
     data.append([Customer_ID, Date_Visited, Money_Spent, Product_Category])
 
@@ -108,11 +108,11 @@ if uploaded_file:
     # Adding KPIs Information to the Streamlit dashboard
     st.subheader("**Key Performance Indicators (KPIs):**", divider='rainbow')
 
-    st.metric("**1. Average Money Spent Per Customer(Threshold: 300):**", Avg_Spent_Per_Customer)
+    st.metric("**1. Average Money Spent Per Customer(Threshold: 300 USD):**", Avg_Spent_Per_Customer)
 
     st.metric("**2. Most Popular Product Category:** ", Popular_Product_Category)
 
-    st.metric("**3. Monthly Revenue Growth(Threshold: 40,000):** ", Monthly_Revenue_Growth)
+    st.metric("**3. Monthly Revenue Growth(Threshold: 40,000 USD):** ", Monthly_Revenue_Growth)
 
 
     # Adding Suggestions to the Streamlit Dashboard
