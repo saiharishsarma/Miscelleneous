@@ -37,7 +37,7 @@ df= pd.DataFrame(data,  columns= ['Customer_ID','Date_Visited', 'Money_Spent', '
 
 
 # Displaying Dataset on Streamlit Interface
-if nums ==0:
+if nums <=0:
     st.warning('Please enter a valid input')
 else:
     st.success(":wave: Great! Dataset is generated. :wave:")
