@@ -64,10 +64,9 @@ st.title("B. Customer Behaviour Analysis and Suggestion Tool")
 uploaded_file = st.file_uploader("**Upload your CSV file here**", type = ['csv'])
 
 
-data= pd.read_csv(uploaded_file)
 if list(df.columns) == list(data.columns):
 
-    
+    data= pd.read_csv(uploaded_file)
     # Basic EDA
     
     st.subheader("Basic Exploratory Data Analysis of the Dataset:", divider= "rainbow")
