@@ -89,7 +89,7 @@ if uploaded_file:
 
     Popular_Product_Category = data['ProductCategory'].mode()[0]
 
-    Monthly_Revenue_Growth= round(data.groupby(data['VisitDate'].str[0:7])['TotalSpend'].sum().mean(),2)
+    Monthly_Revenue_Growth= round(data.groupby(data['VisitDate'].str[0:7])['TotalSpend'].sum(),2)
 
 
     # Creating Suggestions to be appeared based on hypothetically designed threshold values
