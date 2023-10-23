@@ -17,7 +17,7 @@ nums = st.number_input('**Enter No of Rows needed in the data simulation(Ex: 500
 
 
 # Considering different categories of product
-categories = ['Electronics', 'Clothing', 'Food', 'Entertainment', 'Home_and_Garden', 'Beauty_and_Health']
+categories = ['Electronics', 'Clothing', 'Food', 'Entertainment', 'Home and Garden', 'Beauty and Health']
 
 
 
